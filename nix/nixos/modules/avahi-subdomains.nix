@@ -41,6 +41,8 @@ in {
           ExecStart = "${pkgs.avahi-subdomains}/bin/avahi-subdomains";
           ConfigurationDirectory = "avahi-subdomains";
         };
+        restartTriggers =
+          [ environment.etc."avahi-subdomains/subdomains".source ];
       };
     };
 
